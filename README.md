@@ -2,6 +2,7 @@
 Prazan projekat sa pratećim bibliotekama koje koristimo na času. 
 
 any poggers in the chat?
+hjoj bojane sta radiiis pepeHands
 
 # Uputstvo
 1. `git clone https://github.com/matf-racunarska-grafika/project_base.git`
