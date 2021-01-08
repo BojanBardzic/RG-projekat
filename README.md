@@ -4,6 +4,8 @@ Prazan projekat sa pratećim bibliotekama koje koristimo na času.
 any poggers in the chat?
 hjoj bojane sta radiiis pepeHands
 
+Promena na readme
+
 # Uputstvo
 1. `git clone https://github.com/matf-racunarska-grafika/project_base.git`
 2. CLion -> Open -> path/to/my/project_base
