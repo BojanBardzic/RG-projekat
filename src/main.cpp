@@ -52,22 +52,23 @@ int main() {
 
     // glfw window creation
     // --------------------
-    GLFWwindow *window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "LearnOpenGL", NULL, NULL);
+    GLFWwindow *window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "Projekat", NULL, NULL);
     if (window == NULL) {
         std::cout << "Failed to create GLFW window" << std::endl;
         glfwTerminate();
-        return -1;
+        return EXIT_FAILURE;
     }
     glfwMakeContextCurrent(window);
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
     glfwSetCursorPosCallback(window, mouse_callback);
     glfwSetScrollCallback(window, scroll_callback);
+    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
     // glad: load all OpenGL function pointers
     // ---------------------------------------
     if (!gladLoadGLLoader((GLADloadproc) glfwGetProcAddress)) {
         std::cout << "Failed to initialize GLAD" << std::endl;
-        return -1;
+        return EXIT_FAILURE;
     }
 
     // tell stb_image.h to flip loaded texture's on the y-axis (before loading model).
@@ -86,7 +87,6 @@ int main() {
     //Model ourModel("resources/objects/backpack/backpack.obj");
     //ourModel.SetShaderTextureNamePrefix("material.");
 
-    //za piramidu testiram
     Shader ourShader(FileSystem::getPath("resources/shaders/vertexShader.vs").c_str(), FileSystem::getPath("resources/shaders/fragmentShader.fs").c_str());
     Shader rectangleShader(FileSystem::getPath("resources/shaders/rectangle.vs").c_str(), FileSystem::getPath("resources/shaders/rectangle.fs").c_str());
 
@@ -116,10 +116,10 @@ int main() {
     };
 
     float verticesRectangle[] = {
-            0.5f,  0.5f, 0.5f, //ovde sam pomerio z kordinatu na 0.5 da bi bilo iskoseno
-            0.5f, 0.5f, 0.0f,
-            -0.5f, -0.5f, 0.0f,
-            -0.5f,  0.5f, 0.5f // isto kao za prvi vertex
+             0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+             0.5f, -0.5f, -0.5f,  1.0f, 0.0f,
+            -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
+            -0.5f,  0.5f, -0.5f,  0.0f, 1.0f
     };
 
     unsigned int indices[] = {
@@ -145,6 +145,7 @@ int main() {
 
     glGenVertexArrays(1, &rVAO);
     glGenBuffers(1, &rVBO);
+    glGenBuffers(1, &rEBO);
 
     glBindVertexArray(rVAO);
 
@@ -154,8 +155,10 @@ int main() {
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, rEBO);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
+    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
+    glEnableVertexAttribArray(1);
 
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
@@ -173,7 +176,6 @@ int main() {
 
     int width, height, nrChannels;
 
-    stbi_set_flip_vertically_on_load(true);
     unsigned char* data = stbi_load(FileSystem::getPath("resources/textures/bricks.jpeg").c_str(), &width, &height, &nrChannels, 0);
     if(data){
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
@@ -208,6 +210,36 @@ int main() {
     ourShader.setInt("texture1", 0);
     ourShader.setInt("texture2", 1);
 
+
+    unsigned int texture3;
+
+    glGenTextures(1, &texture3);
+    glBindTexture(GL_TEXTURE_2D, texture3);
+
+    glTexParameteri(texture3, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameteri(texture3, GL_TEXTURE_WRAP_T, GL_REPEAT);
+
+    glTexParameteri(texture3, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(texture3, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+    data = stbi_load(FileSystem::getPath("resources/textures/carpet.jpeg").c_str(), &width, &height, &nrChannels, 0);
+
+    if(data){
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+        glGenerateMipmap(GL_TEXTURE_2D);
+    }
+    else{
+        std::cout << "Treca tekstura rip" << std::endl;
+    }
+
+    stbi_image_free(data);
+
+    //ne znam zasto je ovaj 3 kad su prethodni bili 0 i 1...
+    rectangleShader.use();
+    rectangleShader.setInt("texture3", 3);
+
+
+
     // draw in wireframe
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
@@ -227,7 +259,7 @@ int main() {
 
         // render
         // ------
-        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+        glClearColor(0.4f, 0.7f, 0.9f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         // don't forget to enable shader before setting uniforms
@@ -236,6 +268,8 @@ int main() {
         glBindTexture(GL_TEXTURE_2D, texture1);
         glActiveTexture(GL_TEXTURE1);
         glBindTexture(GL_TEXTURE_2D, texture2);
+        glActiveTexture(GL_TEXTURE3);
+        glBindTexture(GL_TEXTURE_2D, texture3);
 
         ourShader.use();
 
@@ -248,9 +282,9 @@ int main() {
         glBindVertexArray(VAO);
 
         glm::mat4 model = glm::mat4(1.0f);
-        model = glm::translate(model, glm::vec3(0.0f, 0.0f, -3.0f));
+        model = glm::scale(model, glm::vec3(2.0f));
         model = glm::rotate(model, glm::radians(90.0f), glm::vec3(-1.0f, 0.0f, 0.0f));
-        model = glm::scale(model, glm::vec3(1.5f));
+        model = glm::translate(model, glm::vec3(0.0f, 2.0f, 0.0f));
         ourShader.setMat4("model", model);
 
         glDrawArrays(GL_TRIANGLES, 0, 18);
@@ -263,6 +297,9 @@ int main() {
         glBindVertexArray(rVAO);
 
         model = glm::mat4(1.0f);
+        model = glm::scale(model, glm::vec3(1.0f, 1.0f, 3.0f));
+        model = glm::rotate(model, glm::radians(90.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+        model = glm::translate(model, glm::vec3(0.0f, 0.0f, 1.25f));
         rectangleShader.setMat4("model", model);
 
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
@@ -283,11 +320,14 @@ int main() {
 
     glDeleteVertexArrays(1, &VAO);
     glDeleteBuffers(1, &VBO);
+    glDeleteVertexArrays(1, &rVAO);
+    glDeleteBuffers(1, &rVBO);
+    glDeleteBuffers(1,&rEBO);
 
     // glfw: terminate, clearing all previously allocated GLFW resources.
     // ------------------------------------------------------------------
     glfwTerminate();
-    return 0;
+    return EXIT_SUCCESS;
 }
 
 // process all input: query GLFW whether relevant keys are pressed/released this frame and react accordingly
