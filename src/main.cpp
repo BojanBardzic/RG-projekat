@@ -96,28 +96,28 @@ int main() {
     Shader ourShader(FileSystem::getPath("resources/shaders/vertexShader.vs").c_str(), FileSystem::getPath("resources/shaders/fragmentShader.fs").c_str());
 
     float vertices[] = {
-            0.0f,  0.0f,  0.5f, 0.5f, 1.0f,
-            0.5f,  0.5f, -0.5f, 1.0f, 0.0f,
+             0.0f,  0.0f,  0.5f, 0.5f, 1.0f,
+             0.5f,  0.5f, -0.5f, 1.0f, 0.0f,
             -0.5f,  0.5f, -0.5f, 0.0f, 0.0f,
 
-            0.0f,  0.0f,  0.5f, 0.5f, 1.0f,
-            -0.5f,  0.5f,  -0.5f, 1.0f, 0.0f,
-            -0.5f, -0.5f,  -0.5f, 0.0f, 0.0f,
+             0.0f,  0.0f,  0.5f, 0.5f, 1.0f,
+            -0.5f,  0.5f, -0.5f, 1.0f, 0.0f,
+            -0.5f, -0.5f, -0.5f, 0.0f, 0.0f,
 
-            0.0f,  0.0f,  0.5f, 0.5f, 1.0f,
+             0.0f,  0.0f,  0.5f, 0.5f, 1.0f,
             -0.5f, -0.5f, -0.5f, 1.0f, 0.0f,
-            0.5f, -0.5f, -0.5f, 0.0f, 0.0f,
+             0.5f, -0.5f, -0.5f, 0.0f, 0.0f,
 
-            0.0f,  0.0f,  0.5f, 0.5f, 1.0f,
-            0.5f,  0.5f, -0.5f, 1.0f, 0.0f,
-            0.5f, -0.5f, -0.5f, 0.0f, 0.0f,
+             0.0f,  0.0f,  0.5f, 0.5f, 1.0f,
+             0.5f,  0.5f, -0.5f, 1.0f, 0.0f,
+             0.5f, -0.5f, -0.5f, 0.0f, 0.0f,
 
-            0.5f,  0.5f, -0.5f, 0.0f, 0.0f,
+             0.5f,  0.5f, -0.5f, 0.0f, 0.0f,
             -0.5f,  0.5f, -0.5f, 1.0f, 0.0f,
             -0.5f, -0.5f, -0.5f, 1.0f, 1.0f,
             -0.5f, -0.5f, -0.5f, 1.0f, 1.0f,
-            0.5f, -0.5f, -0.5f, 0.0f, 1.0f,
-            0.5f,  0.5f, -0.5f, 0.0f, 0.0f
+             0.5f, -0.5f, -0.5f, 0.0f, 1.0f,
+             0.5f,  0.5f, -0.5f, 0.0f, 0.0f
     };
 
     unsigned int VBO, VAO;
@@ -148,7 +148,7 @@ int main() {
     int width, height, nrChannels;
 
     stbi_set_flip_vertically_on_load(true);
-    unsigned char* data = stbi_load(FileSystem::getPath("resources/textures/container.jpg").c_str(), &width, &height, &nrChannels, 0);
+    unsigned char* data = stbi_load(FileSystem::getPath("resources/textures/bricks.jpeg").c_str(), &width, &height, &nrChannels, 0);
     if(data){
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
         glGenerateMipmap(GL_TEXTURE_2D);
@@ -222,10 +222,11 @@ int main() {
         glBindVertexArray(VAO);
 
         glm::mat4 model = glm::mat4(1.0f);
+        model = glm::rotate(model, glm::radians(90.0f), glm::vec3(-1.0f, 0.0f, 0.0f));
+        model = glm::scale(model, glm::vec3(1.5f));
         ourShader.setMat4("model", model);
 
         glDrawArrays(GL_TRIANGLES, 0, 18);
-
 
 
         // render the loaded model
