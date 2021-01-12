@@ -38,6 +38,9 @@ bool firstMouse = true;
 float deltaTime = 0.0f;
 float lastFrame = 0.0f;
 
+//svetlo
+glm::vec3 lightPos(1.0, 3.0, 1.0);
+
 int main() {
     // glfw: initialize and configure
     // ------------------------------
@@ -89,30 +92,31 @@ int main() {
 
     Shader ourShader(FileSystem::getPath("resources/shaders/vertexShader.vs").c_str(), FileSystem::getPath("resources/shaders/fragmentShader.fs").c_str());
     Shader rectangleShader(FileSystem::getPath("resources/shaders/rectangle.vs").c_str(), FileSystem::getPath("resources/shaders/rectangle.fs").c_str());
+    Shader lightSourceShader(FileSystem::getPath("resources/shaders/light_source.vs").c_str(), FileSystem::getPath("resources/shaders/light_source.fs").c_str());
 
     float vertices[] = {
-             0.0f,  0.0f,  0.5f, 0.5f, 1.0f,
-             0.5f,  0.5f, -0.5f, 1.0f, 0.0f,
-            -0.5f,  0.5f, -0.5f, 0.0f, 0.0f,
+             0.0f,  0.0f,  0.5f, 0.5f, 1.0f, 0.0f, 1.0f, 0.5f,
+             0.5f,  0.5f, -0.5f, 1.0f, 0.0f, 0.0f, 1.0f, 0.5f,
+            -0.5f,  0.5f, -0.5f, 0.0f, 0.0f, 0.0f, 1.0f, 0.5f,
 
-             0.0f,  0.0f,  0.5f, 0.5f, 1.0f,
-            -0.5f,  0.5f, -0.5f, 1.0f, 0.0f,
-            -0.5f, -0.5f, -0.5f, 0.0f, 0.0f,
+             0.0f,  0.0f,  0.5f, 0.5f, 1.0f, -1.0f, 0.0f, 0.5f,
+            -0.5f,  0.5f, -0.5f, 1.0f, 0.0f, -1.0f, 0.0f, 0.5f,
+            -0.5f, -0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 0.0f, 0.5f,
 
-             0.0f,  0.0f,  0.5f, 0.5f, 1.0f,
-            -0.5f, -0.5f, -0.5f, 1.0f, 0.0f,
-             0.5f, -0.5f, -0.5f, 0.0f, 0.0f,
+             0.0f,  0.0f,  0.5f, 0.5f, 1.0f, 0.0f, -1.0f, 0.5f,
+            -0.5f, -0.5f, -0.5f, 1.0f, 0.0f, 0.0f, -1.0f, 0.5f,
+             0.5f, -0.5f, -0.5f, 0.0f, 0.0f, 0.0f, -1.0f, 0.5f,
 
-             0.0f,  0.0f,  0.5f, 0.5f, 1.0f,
-             0.5f,  0.5f, -0.5f, 1.0f, 0.0f,
-             0.5f, -0.5f, -0.5f, 0.0f, 0.0f,
+             0.0f,  0.0f,  0.5f, 0.5f, 1.0f, 1.0f, 0.0f, 0.5f,
+             0.5f,  0.5f, -0.5f, 1.0f, 0.0f, 1.0f, 0.0f, 0.5f,
+             0.5f, -0.5f, -0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 0.5f,
 
-             0.5f,  0.5f, -0.5f, 0.0f, 0.0f,
-            -0.5f,  0.5f, -0.5f, 1.0f, 0.0f,
-            -0.5f, -0.5f, -0.5f, 1.0f, 1.0f,
-            -0.5f, -0.5f, -0.5f, 1.0f, 1.0f,
-             0.5f, -0.5f, -0.5f, 0.0f, 1.0f,
-             0.5f,  0.5f, -0.5f, 0.0f, 0.0f
+             0.5f,  0.5f, -0.5f, 0.0f, 0.0f, 0.0f, 0.0f, -1.0f,
+            -0.5f,  0.5f, -0.5f, 1.0f, 0.0f, 0.0f, 0.0f, -1.0f,
+            -0.5f, -0.5f, -0.5f, 1.0f, 1.0f, 0.0f, 0.0f, -1.0f,
+            -0.5f, -0.5f, -0.5f, 1.0f, 1.0f, 0.0f, 0.0f, -1.0f,
+             0.5f, -0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 0.0f, -1.0f,
+             0.5f,  0.5f, -0.5f, 0.0f, 0.0f, 0.0f, 0.0f, -1.0f
     };
 
     float verticesRectangle[] = {
@@ -122,6 +126,50 @@ int main() {
             -0.5f,  0.5f, -0.5f,  0.0f, 1.0f
     };
 
+    float verticesLight[] = {
+            -0.5f, -0.5f, -0.5f,
+            0.5f, -0.5f, -0.5f,
+            0.5f,  0.5f, -0.5f,
+            0.5f,  0.5f, -0.5f,
+            -0.5f,  0.5f, -0.5f,
+            -0.5f, -0.5f, -0.5f,
+
+            -0.5f, -0.5f,  0.5f,
+            0.5f, -0.5f,  0.5f,
+            0.5f,  0.5f,  0.5f,
+            0.5f,  0.5f,  0.5f,
+            -0.5f,  0.5f,  0.5f,
+            -0.5f, -0.5f,  0.5f,
+
+            -0.5f,  0.5f,  0.5f,
+            -0.5f,  0.5f, -0.5f,
+            -0.5f, -0.5f, -0.5f,
+            -0.5f, -0.5f, -0.5f,
+            -0.5f, -0.5f,  0.5f,
+            -0.5f,  0.5f,  0.5f,
+
+            0.5f,  0.5f,  0.5f,
+            0.5f,  0.5f, -0.5f,
+            0.5f, -0.5f, -0.5f,
+            0.5f, -0.5f, -0.5f,
+            0.5f, -0.5f,  0.5f,
+            0.5f,  0.5f,  0.5f,
+
+            -0.5f, -0.5f, -0.5f,
+            0.5f, -0.5f, -0.5f,
+            0.5f, -0.5f,  0.5f,
+            0.5f, -0.5f,  0.5f,
+            -0.5f, -0.5f,  0.5f,
+            -0.5f, -0.5f, -0.5f,
+
+            -0.5f,  0.5f, -0.5f,
+            0.5f,  0.5f, -0.5f,
+            0.5f,  0.5f,  0.5f,
+            0.5f,  0.5f,  0.5f,
+            -0.5f,  0.5f,  0.5f,
+            -0.5f,  0.5f, -0.5f,
+    };
+
     unsigned int indices[] = {
             0, 1, 3,  // first Triangle
             1, 2, 3   // second Triangle
@@ -129,7 +177,9 @@ int main() {
 
     unsigned int VBO, VAO;
     unsigned int rVBO, rVAO, rEBO;
+    unsigned int lightVAO, lightVBO;
 
+    //piramida
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
 
@@ -138,11 +188,14 @@ int main() {
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
-    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
+    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3 * sizeof(float)));
     glEnableVertexAttribArray(1);
+    glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(5 * sizeof(float)));
+    glEnableVertexAttribArray(2);
 
+    //tepih
     glGenVertexArrays(1, &rVAO);
     glGenBuffers(1, &rVBO);
     glGenBuffers(1, &rEBO);
@@ -159,6 +212,18 @@ int main() {
     glEnableVertexAttribArray(0);
     glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
     glEnableVertexAttribArray(1);
+
+    //svetlo
+    glGenVertexArrays(1, &lightVAO);
+    glGenBuffers(1, &lightVBO);
+
+    glBindVertexArray(lightVAO);
+
+    glBindBuffer(GL_ARRAY_BUFFER, lightVBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(verticesLight), verticesLight, GL_STATIC_DRAW);
+
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3*sizeof(float), (void*)0);
+    glEnableVertexAttribArray(0);
 
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
@@ -258,7 +323,9 @@ int main() {
 
         // render
         // ------
-        glClearColor(0.4f, 0.7f, 0.9f, 1.0f);
+        // zakomenarisao sam ovu boju da bih isprobao sa crnom
+        //glClearColor(0.4f, 0.7f, 0.9f, 1.0f);
+        glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         // don't forget to enable shader before setting uniforms
@@ -270,6 +337,7 @@ int main() {
         glActiveTexture(GL_TEXTURE2);
         glBindTexture(GL_TEXTURE_2D, texture3);
 
+        //piramida
         ourShader.use();
 
         glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)SCR_WIDTH/(float)SCR_HEIGHT, 0.1f, 100.f);
@@ -281,14 +349,17 @@ int main() {
         glBindVertexArray(VAO);
 
         glm::mat4 model = glm::mat4(1.0f);
-        model = glm::translate(model, glm::vec3(0.0f, 0.0f, -3.0f));
-        model = glm::rotate(model, glm::radians(90.0f), glm::vec3(-1.0f, 0.0f, 0.0f));
-        model = glm::scale(model, glm::vec3(2.0f));
+        //model = glm::translate(model, glm::vec3(0.0f, 0.0f, -3.0f));
+        //model = glm::rotate(model, glm::radians(90.0f), glm::vec3(-1.0f, 0.0f, 0.0f));
+        //model = glm::scale(model, glm::vec3(2.0f));
 
         ourShader.setMat4("model", model);
+        ourShader.setVec3("lightColor", 1.0f, 1.0f, 1.0f);
+        ourShader.setVec3("lightPos", lightPos);
 
         glDrawArrays(GL_TRIANGLES, 0, 18);
 
+        //tepih
         rectangleShader.use();
 
         rectangleShader.setMat4("projection", projection);
@@ -306,6 +377,18 @@ int main() {
         rectangleShader.setMat4("model", model);
 
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+
+        //svetlo
+        lightSourceShader.use();
+        lightSourceShader.setMat4("projection", projection);
+        lightSourceShader.setMat4("view", view);
+        model = glm::mat4(1.0f);
+        model = glm::translate(model, lightPos);
+        model = glm::scale(model, glm::vec3(0.3f));
+        lightSourceShader.setMat4("model", model);
+
+        glBindVertexArray(lightVAO);
+        glDrawArrays(GL_TRIANGLES, 0, 36);
 
         // render the loaded model
         //glm::mat4 model = glm::mat4(1.0f);
@@ -326,6 +409,8 @@ int main() {
     glDeleteVertexArrays(1, &rVAO);
     glDeleteBuffers(1, &rVBO);
     glDeleteBuffers(1,&rEBO);
+    glDeleteVertexArrays(1, &lightVAO);
+    glDeleteBuffers(1, &lightVBO);
 
     // glfw: terminate, clearing all previously allocated GLFW resources.
     // ------------------------------------------------------------------
