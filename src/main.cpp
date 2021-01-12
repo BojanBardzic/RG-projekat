@@ -234,9 +234,8 @@ int main() {
 
     stbi_image_free(data);
 
-    //ne znam zasto je ovaj 3 kad su prethodni bili 0 i 1...
     rectangleShader.use();
-    rectangleShader.setInt("texture3", 3);
+    rectangleShader.setInt("texture3", 2);
 
 
 
@@ -268,7 +267,7 @@ int main() {
         glBindTexture(GL_TEXTURE_2D, texture1);
         glActiveTexture(GL_TEXTURE1);
         glBindTexture(GL_TEXTURE_2D, texture2);
-        glActiveTexture(GL_TEXTURE3);
+        glActiveTexture(GL_TEXTURE2);
         glBindTexture(GL_TEXTURE_2D, texture3);
 
         ourShader.use();
@@ -282,9 +281,10 @@ int main() {
         glBindVertexArray(VAO);
 
         glm::mat4 model = glm::mat4(1.0f);
-        model = glm::scale(model, glm::vec3(2.0f));
+        model = glm::translate(model, glm::vec3(0.0f, 0.0f, -3.0f));
         model = glm::rotate(model, glm::radians(90.0f), glm::vec3(-1.0f, 0.0f, 0.0f));
-        model = glm::translate(model, glm::vec3(0.0f, 2.0f, 0.0f));
+        model = glm::scale(model, glm::vec3(2.0f));
+
         ourShader.setMat4("model", model);
 
         glDrawArrays(GL_TRIANGLES, 0, 18);
@@ -296,10 +296,13 @@ int main() {
 
         glBindVertexArray(rVAO);
 
+        //ne znam kako da okrenem tepih da ide od piramide a ne uz nju....
+
         model = glm::mat4(1.0f);
-        model = glm::scale(model, glm::vec3(1.0f, 1.0f, 3.0f));
+        model = glm::translate(model, glm::vec3(0.0f, -2.5f, -1.5f));
         model = glm::rotate(model, glm::radians(90.0f), glm::vec3(1.0f, 0.0f, 0.0f));
-        model = glm::translate(model, glm::vec3(0.0f, 0.0f, 1.25f));
+        model = glm::scale(model, glm::vec3(2.0f, 1.0f, 3.0f));
+
         rectangleShader.setMat4("model", model);
 
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
