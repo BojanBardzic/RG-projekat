@@ -19,7 +19,6 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STB_IMAGE.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STB_IMAGE.dir/CXX.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STB_IMAGE.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STB_IMAGE.dir/DependInfo.cmake" afterDir="false" />
@@ -67,9 +66,11 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/imgui/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/imgui/cmake_install.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/imgui/libimgui.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/imgui/libimgui.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/project_base.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/project_base.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/learnopengl/camera.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/learnopengl/camera.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project_base" beforeDir="false" afterPath="$PROJECT_DIR$/project_base" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/shaders/fragmentShader.fs" beforeDir="false" afterPath="$PROJECT_DIR$/resources/shaders/fragmentShader.fs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/shaders/vertexShader.vs" beforeDir="false" afterPath="$PROJECT_DIR$/resources/shaders/vertexShader.vs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/shaders/fragmentShader.fs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/shaders/vertexShader.vs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/textures/bricks.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/textures/bricks.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -97,10 +98,15 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../LearnOpenGL" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager" selected="CMake Application.project_base">
     <configuration name="STB_IMAGE" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="project_base" TARGET_NAME="STB_IMAGE" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -118,11 +124,6 @@
     <configuration name="project_base" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="project_base" TARGET_NAME="project_base" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="project_base" RUN_TARGET_NAME="project_base">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <list>
@@ -153,6 +154,8 @@
       <workItem from="1610407897007" duration="541000" />
       <workItem from="1610408568187" duration="1526000" />
       <workItem from="1610483095802" duration="7999000" />
+      <workItem from="1610494619717" duration="7100000" />
+      <workItem from="1610555928353" duration="5630000" />
     </task>
     <servers />
   </component>

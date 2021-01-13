@@ -90,7 +90,7 @@ int main() {
     //Model ourModel("resources/objects/backpack/backpack.obj");
     //ourModel.SetShaderTextureNamePrefix("material.");
 
-    Shader ourShader(FileSystem::getPath("resources/shaders/vertexShader.vs").c_str(), FileSystem::getPath("resources/shaders/fragmentShader.fs").c_str());
+    Shader pyramidShader(FileSystem::getPath("resources/shaders/pyramid.vs").c_str(), FileSystem::getPath("resources/shaders/pyramid.fs").c_str());
     Shader rectangleShader(FileSystem::getPath("resources/shaders/rectangle.vs").c_str(), FileSystem::getPath("resources/shaders/rectangle.fs").c_str());
     Shader lightSourceShader(FileSystem::getPath("resources/shaders/light_source.vs").c_str(), FileSystem::getPath("resources/shaders/light_source.fs").c_str());
 
@@ -126,66 +126,67 @@ int main() {
             -0.5f,  0.5f, -0.5f,  0.0f, 1.0f
     };
 
-    float verticesLight[] = {
-            -0.5f, -0.5f, -0.5f,
-            0.5f, -0.5f, -0.5f,
-            0.5f,  0.5f, -0.5f,
-            0.5f,  0.5f, -0.5f,
-            -0.5f,  0.5f, -0.5f,
-            -0.5f, -0.5f, -0.5f,
-
-            -0.5f, -0.5f,  0.5f,
-            0.5f, -0.5f,  0.5f,
-            0.5f,  0.5f,  0.5f,
-            0.5f,  0.5f,  0.5f,
-            -0.5f,  0.5f,  0.5f,
-            -0.5f, -0.5f,  0.5f,
-
-            -0.5f,  0.5f,  0.5f,
-            -0.5f,  0.5f, -0.5f,
-            -0.5f, -0.5f, -0.5f,
-            -0.5f, -0.5f, -0.5f,
-            -0.5f, -0.5f,  0.5f,
-            -0.5f,  0.5f,  0.5f,
-
-            0.5f,  0.5f,  0.5f,
-            0.5f,  0.5f, -0.5f,
-            0.5f, -0.5f, -0.5f,
-            0.5f, -0.5f, -0.5f,
-            0.5f, -0.5f,  0.5f,
-            0.5f,  0.5f,  0.5f,
-
-            -0.5f, -0.5f, -0.5f,
-            0.5f, -0.5f, -0.5f,
-            0.5f, -0.5f,  0.5f,
-            0.5f, -0.5f,  0.5f,
-            -0.5f, -0.5f,  0.5f,
-            -0.5f, -0.5f, -0.5f,
-
-            -0.5f,  0.5f, -0.5f,
-            0.5f,  0.5f, -0.5f,
-            0.5f,  0.5f,  0.5f,
-            0.5f,  0.5f,  0.5f,
-            -0.5f,  0.5f,  0.5f,
-            -0.5f,  0.5f, -0.5f,
-    };
-
     unsigned int indices[] = {
             0, 1, 3,  // first Triangle
             1, 2, 3   // second Triangle
     };
 
-    unsigned int VBO, VAO;
+    float verticesLight[] = {
+            -0.5f, -0.5f, -0.5f,
+             0.5f, -0.5f, -0.5f,
+             0.5f,  0.5f, -0.5f,
+             0.5f,  0.5f, -0.5f,
+            -0.5f,  0.5f, -0.5f,
+            -0.5f, -0.5f, -0.5f,
+
+            -0.5f, -0.5f,  0.5f,
+             0.5f, -0.5f,  0.5f,
+             0.5f,  0.5f,  0.5f,
+             0.5f,  0.5f,  0.5f,
+            -0.5f,  0.5f,  0.5f,
+            -0.5f, -0.5f,  0.5f,
+
+            -0.5f,  0.5f,  0.5f,
+            -0.5f,  0.5f, -0.5f,
+            -0.5f, -0.5f, -0.5f,
+            -0.5f, -0.5f, -0.5f,
+            -0.5f, -0.5f,  0.5f,
+            -0.5f,  0.5f,  0.5f,
+
+             0.5f,  0.5f,  0.5f,
+             0.5f,  0.5f, -0.5f,
+             0.5f, -0.5f, -0.5f,
+             0.5f, -0.5f, -0.5f,
+             0.5f, -0.5f,  0.5f,
+             0.5f,  0.5f,  0.5f,
+
+            -0.5f, -0.5f, -0.5f,
+             0.5f, -0.5f, -0.5f,
+             0.5f, -0.5f,  0.5f,
+             0.5f, -0.5f,  0.5f,
+            -0.5f, -0.5f,  0.5f,
+            -0.5f, -0.5f, -0.5f,
+
+            -0.5f,  0.5f, -0.5f,
+             0.5f,  0.5f, -0.5f,
+             0.5f,  0.5f,  0.5f,
+             0.5f,  0.5f,  0.5f,
+            -0.5f,  0.5f,  0.5f,
+            -0.5f,  0.5f, -0.5f,
+    };
+
+
+    unsigned int pVBO, pVAO;
     unsigned int rVBO, rVAO, rEBO;
     unsigned int lightVAO, lightVBO;
 
     //piramida
-    glGenVertexArrays(1, &VAO);
-    glGenBuffers(1, &VBO);
+    glGenVertexArrays(1, &pVAO);
+    glGenBuffers(1, &pVBO);
 
-    glBindVertexArray(VAO);
+    glBindVertexArray(pVAO);
 
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    glBindBuffer(GL_ARRAY_BUFFER, pVBO);
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
@@ -271,9 +272,9 @@ int main() {
 
     stbi_image_free(data);
 
-    ourShader.use();
-    ourShader.setInt("texture1", 0);
-    ourShader.setInt("texture2", 1);
+    pyramidShader.use();
+    pyramidShader.setInt("texture1", 0);
+    pyramidShader.setInt("texture2", 1);
 
 
     unsigned int texture3;
@@ -337,41 +338,53 @@ int main() {
         glActiveTexture(GL_TEXTURE2);
         glBindTexture(GL_TEXTURE_2D, texture3);
 
-        //piramida
-        ourShader.use();
-
         glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)SCR_WIDTH/(float)SCR_HEIGHT, 0.1f, 100.f);
-        ourShader.setMat4("projection", projection);
-
         glm::mat4 view = camera.GetViewMatrix();
-        ourShader.setMat4("view", view);
 
-        glBindVertexArray(VAO);
+        //rotacija svetla
+        lightPos.x = sin(glfwGetTime());
+        lightPos.z = sin(glfwGetTime()) - 3.0f;
+        lightPos.x = cos(glfwGetTime());
+
+        //piramida
+        pyramidShader.use();
+        pyramidShader.setVec3("viewPos", camera.Position);
+
+        pyramidShader.setVec3("light.position", lightPos);
+        pyramidShader.setVec3("light.ambient", glm::vec3(0.2f));
+        pyramidShader.setVec3("light.diffuse", glm::vec3(1.0f));
+        pyramidShader.setVec3("light.specular", glm::vec3(1.0f));
+
+        pyramidShader.setVec3("material.ambient", glm::vec3(0.5f));
+        pyramidShader.setVec3("material.diffuse", glm::vec3(1.0f));
+        pyramidShader.setVec3("material.specular", glm::vec3(0.4f));
+        pyramidShader.setFloat("material.shininess", 32.0f);
+
+        pyramidShader.setMat4("projection", projection);
+        pyramidShader.setMat4("view", view);
+
+        glBindVertexArray(pVAO);
 
         glm::mat4 model = glm::mat4(1.0f);
-        //model = glm::translate(model, glm::vec3(0.0f, 0.0f, -3.0f));
-        //model = glm::rotate(model, glm::radians(90.0f), glm::vec3(-1.0f, 0.0f, 0.0f));
-        //model = glm::scale(model, glm::vec3(2.0f));
+        model = glm::translate(model, glm::vec3(0.0f, 0.0f, -3.0f));
+        model = glm::rotate(model, glm::radians(90.0f), glm::vec3(-1.0f, 0.0f, 0.0f));
+        model = glm::scale(model, glm::vec3(2.0f));
 
-        ourShader.setMat4("model", model);
-        ourShader.setVec3("lightColor", 1.0f, 1.0f, 1.0f);
-        ourShader.setVec3("lightPos", lightPos);
+        pyramidShader.setMat4("model", model);
 
         glDrawArrays(GL_TRIANGLES, 0, 18);
 
         //tepih
         rectangleShader.use();
-
         rectangleShader.setMat4("projection", projection);
         rectangleShader.setMat4("view", view);
 
         glBindVertexArray(rVAO);
 
-        //ne znam kako da okrenem tepih da ide od piramide a ne uz nju....
-
         model = glm::mat4(1.0f);
-        model = glm::translate(model, glm::vec3(0.0f, -2.5f, -1.5f));
+        model = glm::translate(model, glm::vec3(0.0f, -2.5f, -1.0f));
         model = glm::rotate(model, glm::radians(90.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+        model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 0.0f, 1.0f));
         model = glm::scale(model, glm::vec3(2.0f, 1.0f, 3.0f));
 
         rectangleShader.setMat4("model", model);
@@ -404,8 +417,8 @@ int main() {
         glfwPollEvents();
     }
 
-    glDeleteVertexArrays(1, &VAO);
-    glDeleteBuffers(1, &VBO);
+    glDeleteVertexArrays(1, &pVAO);
+    glDeleteBuffers(1, &pVBO);
     glDeleteVertexArrays(1, &rVAO);
     glDeleteBuffers(1, &rVBO);
     glDeleteBuffers(1,&rEBO);
@@ -432,6 +445,10 @@ void processInput(GLFWwindow *window) {
         camera.ProcessKeyboard(LEFT, deltaTime);
     if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
         camera.ProcessKeyboard(RIGHT, deltaTime);
+    if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS)
+        camera.ProcessKeyboard(UP, deltaTime);
+    if(glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS)
+        camera.ProcessKeyboard(DOWN, deltaTime);
 }
 
 // glfw: whenever the window size changed (by OS or user resize) this callback function executes
