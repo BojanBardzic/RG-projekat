@@ -24,6 +24,8 @@ void scroll_callback(GLFWwindow *window, double xoffset, double yoffset);
 
 void processInput(GLFWwindow *window);
 
+unsigned int loadTexture(char const * path);
+
 // settings
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
@@ -229,81 +231,83 @@ int main() {
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
 
-    unsigned int texture1, texture2;
-
-    glGenTextures(1, &texture1);
-    glBindTexture(GL_TEXTURE_2D, texture1);
-
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
-    int width, height, nrChannels;
-
-    unsigned char* data = stbi_load(FileSystem::getPath("resources/textures/bricks.jpeg").c_str(), &width, &height, &nrChannels, 0);
-    if(data){
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
-        glGenerateMipmap(GL_TEXTURE_2D);
-    }
-    else{
-        std::cout << "Tekstura rip" << std::endl;
-    }
-    stbi_image_free(data);
-
-    glGenTextures(1, &texture2);
-    glBindTexture(GL_TEXTURE_2D, texture2);
-
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
-    data = stbi_load(FileSystem::getPath("resources/textures/awesomeface.png").c_str(), &width, &height, &nrChannels, 0);
-    if(data){
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
-        glGenerateMipmap(GL_TEXTURE_2D);
-    }
-    else{
-        std::cout << "Druga tekstura rip" << std::endl;
-    }
-
-    stbi_image_free(data);
+    unsigned int texture1 = loadTexture(FileSystem::getPath("resources/textures/bricks.jpeg").c_str());
+    unsigned int texture2 = loadTexture(FileSystem::getPath("resources/textures/awesomeface.png").c_str());
+    unsigned int specularMap = loadTexture(FileSystem::getPath("resources/textures/specular.jpeg").c_str());
+//    unsigned int texture1, texture2;
+//
+//    glGenTextures(1, &texture1);
+//    glBindTexture(GL_TEXTURE_2D, texture1);
+//
+//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+//
+//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+//
+//    int width, height, nrChannels;
+//
+//    unsigned char* data = stbi_load(FileSystem::getPath("resources/textures/bricks.jpeg").c_str(), &width, &height, &nrChannels, 0);
+//    if(data){
+//        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+//        glGenerateMipmap(GL_TEXTURE_2D);
+//    }
+//    else{
+//        std::cout << "Tekstura rip" << std::endl;
+//    }
+//    stbi_image_free(data);
+//
+//    glGenTextures(1, &texture2);
+//    glBindTexture(GL_TEXTURE_2D, texture2);
+//
+//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+//
+//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+//
+//    data = stbi_load(FileSystem::getPath("resources/textures/awesomeface.png").c_str(), &width, &height, &nrChannels, 0);
+//    if(data){
+//        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+//        glGenerateMipmap(GL_TEXTURE_2D);
+//    }
+//    else{
+//        std::cout << "Druga tekstura rip" << std::endl;
+//    }
+//
+//    stbi_image_free(data);
 
     pyramidShader.use();
     pyramidShader.setInt("texture1", 0);
     pyramidShader.setInt("texture2", 1);
+    pyramidShader.setInt("textureSpecular", 2);
 
-
-    unsigned int texture3;
-
-    glGenTextures(1, &texture3);
-    glBindTexture(GL_TEXTURE_2D, texture3);
-
-    glTexParameteri(texture3, GL_TEXTURE_WRAP_S, GL_REPEAT);
-    glTexParameteri(texture3, GL_TEXTURE_WRAP_T, GL_REPEAT);
-
-    glTexParameteri(texture3, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-    glTexParameteri(texture3, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
-    data = stbi_load(FileSystem::getPath("resources/textures/carpet.jpeg").c_str(), &width, &height, &nrChannels, 0);
-
-    if(data){
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
-        glGenerateMipmap(GL_TEXTURE_2D);
-    }
-    else{
-        std::cout << "Treca tekstura rip" << std::endl;
-    }
-
-    stbi_image_free(data);
+    unsigned int texture3 = loadTexture(FileSystem::getPath("resources/textures/carpet.jpeg").c_str());
+//    unsigned int texture3;
+//
+//    glGenTextures(1, &texture3);
+//    glBindTexture(GL_TEXTURE_2D, texture3);
+//
+//    glTexParameteri(texture3, GL_TEXTURE_WRAP_S, GL_REPEAT);
+//    glTexParameteri(texture3, GL_TEXTURE_WRAP_T, GL_REPEAT);
+//
+//    glTexParameteri(texture3, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+//    glTexParameteri(texture3, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+//
+//    data = stbi_load(FileSystem::getPath("resources/textures/carpet.jpeg").c_str(), &width, &height, &nrChannels, 0);
+//
+//    if(data){
+//        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+//        glGenerateMipmap(GL_TEXTURE_2D);
+//    }
+//    else{
+//        std::cout << "Treca tekstura rip" << std::endl;
+//    }
+//
+//    stbi_image_free(data);
 
     rectangleShader.use();
-    rectangleShader.setInt("texture3", 2);
-
-
+    rectangleShader.setInt("texture3", 3);
 
     // draw in wireframe
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
@@ -336,6 +340,8 @@ int main() {
         glActiveTexture(GL_TEXTURE1);
         glBindTexture(GL_TEXTURE_2D, texture2);
         glActiveTexture(GL_TEXTURE2);
+        glBindTexture(GL_TEXTURE_2D, specularMap);
+        glActiveTexture(GL_TEXTURE3);
         glBindTexture(GL_TEXTURE_2D, texture3);
 
         glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)SCR_WIDTH/(float)SCR_HEIGHT, 0.1f, 100.f);
@@ -355,9 +361,9 @@ int main() {
         pyramidShader.setVec3("light.diffuse", glm::vec3(1.0f));
         pyramidShader.setVec3("light.specular", glm::vec3(1.0f));
 
-        pyramidShader.setVec3("material.ambient", glm::vec3(0.5f));
-        pyramidShader.setVec3("material.diffuse", glm::vec3(1.0f));
-        pyramidShader.setVec3("material.specular", glm::vec3(0.4f));
+        pyramidShader.setFloat("light.constant", 1.0f);
+        pyramidShader.setFloat("light.linear", 0.09f);
+        pyramidShader.setFloat("light.quadratic", 0.032f);
         pyramidShader.setFloat("material.shininess", 32.0f);
 
         pyramidShader.setMat4("projection", projection);
@@ -483,4 +489,41 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos)
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
 {
    camera.ProcessMouseScroll(yoffset);
+}
+
+unsigned int loadTexture(char const * path)
+{
+    unsigned int textureID;
+    glGenTextures(1, &textureID);
+
+    int width, height, nrComponents;
+    unsigned char *data = stbi_load(path, &width, &height, &nrComponents, 0);
+    if (data)
+    {
+        GLenum format;
+        if (nrComponents == 1)
+            format = GL_RED;
+        else if (nrComponents == 3)
+            format = GL_RGB;
+        else if (nrComponents == 4)
+            format = GL_RGBA;
+
+        glBindTexture(GL_TEXTURE_2D, textureID);
+        glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, data);
+        glGenerateMipmap(GL_TEXTURE_2D);
+
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+        stbi_image_free(data);
+    }
+    else
+    {
+        std::cout << "Texture failed to load at path: " << path << std::endl;
+        stbi_image_free(data);
+    }
+
+    return textureID;
 }

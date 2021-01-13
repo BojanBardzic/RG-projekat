@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/stefan99j/Desktop/RG/RG-projekat/src/main.cpp" "/home/stefan99j/Desktop/RG/RG-projekat/cmake-build-debug/CMakeFiles/project_base.dir/src/main.cpp.o"
+  "/home/bojan/Desktop/RG-projekat/src/main.cpp" "/home/bojan/Desktop/RG-projekat/cmake-build-debug/CMakeFiles/project_base.dir/src/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -23,9 +23,9 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/stefan99j/Desktop/RG/RG-projekat/cmake-build-debug/libs/glad/CMakeFiles/glad.dir/DependInfo.cmake"
-  "/home/stefan99j/Desktop/RG/RG-projekat/cmake-build-debug/CMakeFiles/STB_IMAGE.dir/DependInfo.cmake"
-  "/home/stefan99j/Desktop/RG/RG-projekat/cmake-build-debug/libs/imgui/CMakeFiles/imgui.dir/DependInfo.cmake"
+  "/home/bojan/Desktop/RG-projekat/cmake-build-debug/libs/glad/CMakeFiles/glad.dir/DependInfo.cmake"
+  "/home/bojan/Desktop/RG-projekat/cmake-build-debug/CMakeFiles/STB_IMAGE.dir/DependInfo.cmake"
+  "/home/bojan/Desktop/RG-projekat/cmake-build-debug/libs/imgui/CMakeFiles/imgui.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.
