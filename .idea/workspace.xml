@@ -68,8 +68,9 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/project_base.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/project_base.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/learnopengl/camera.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/learnopengl/camera.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project_base" beforeDir="false" afterPath="$PROJECT_DIR$/project_base" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/shaders/2.model_lighting.fs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/shaders/2.model_lighting.vs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/shaders/pyramid.fs" beforeDir="false" afterPath="$PROJECT_DIR$/resources/shaders/pyramid.fs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/textures/specular.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/textures/specular.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -105,6 +106,11 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="glad" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="project_base" TARGET_NAME="glad" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -118,11 +124,6 @@
     <configuration name="project_base" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="project_base" TARGET_NAME="project_base" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="project_base" RUN_TARGET_NAME="project_base">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <list>
@@ -156,6 +157,8 @@
       <workItem from="1610494619717" duration="7100000" />
       <workItem from="1610555928353" duration="5630000" />
       <workItem from="1610567484377" duration="4895000" />
+      <workItem from="1610589282507" duration="186000" />
+      <workItem from="1610654334804" duration="8199000" />
     </task>
     <servers />
   </component>

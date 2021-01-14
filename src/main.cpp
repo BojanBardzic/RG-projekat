@@ -95,8 +95,12 @@ int main() {
     Shader pyramidShader(FileSystem::getPath("resources/shaders/pyramid.vs").c_str(), FileSystem::getPath("resources/shaders/pyramid.fs").c_str());
     Shader rectangleShader(FileSystem::getPath("resources/shaders/rectangle.vs").c_str(), FileSystem::getPath("resources/shaders/rectangle.fs").c_str());
     Shader lightSourceShader(FileSystem::getPath("resources/shaders/light_source.vs").c_str(), FileSystem::getPath("resources/shaders/light_source.fs").c_str());
+    Shader catShader(FileSystem::getPath("resources/shaders/cat.vs").c_str(), FileSystem::getPath("resources/shaders/cat.fs").c_str());
+    Model catModel(FileSystem::getPath("resources/objects/cat/model.dae").c_str());
+    catModel.SetShaderTextureNamePrefix("material.");
 
     float vertices[] = {
+            //position          //texture   //normals
              0.0f,  0.0f,  0.5f, 0.5f, 1.0f, 0.0f, 1.0f, 0.5f,
              0.5f,  0.5f, -0.5f, 1.0f, 0.0f, 0.0f, 1.0f, 0.5f,
             -0.5f,  0.5f, -0.5f, 0.0f, 0.0f, 0.0f, 1.0f, 0.5f,
@@ -234,48 +238,6 @@ int main() {
     unsigned int texture1 = loadTexture(FileSystem::getPath("resources/textures/bricks.jpeg").c_str());
     unsigned int texture2 = loadTexture(FileSystem::getPath("resources/textures/awesomeface.png").c_str());
     unsigned int specularMap = loadTexture(FileSystem::getPath("resources/textures/specular.jpeg").c_str());
-//    unsigned int texture1, texture2;
-//
-//    glGenTextures(1, &texture1);
-//    glBindTexture(GL_TEXTURE_2D, texture1);
-//
-//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-//
-//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-//
-//    int width, height, nrChannels;
-//
-//    unsigned char* data = stbi_load(FileSystem::getPath("resources/textures/bricks.jpeg").c_str(), &width, &height, &nrChannels, 0);
-//    if(data){
-//        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
-//        glGenerateMipmap(GL_TEXTURE_2D);
-//    }
-//    else{
-//        std::cout << "Tekstura rip" << std::endl;
-//    }
-//    stbi_image_free(data);
-//
-//    glGenTextures(1, &texture2);
-//    glBindTexture(GL_TEXTURE_2D, texture2);
-//
-//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-//
-//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-//
-//    data = stbi_load(FileSystem::getPath("resources/textures/awesomeface.png").c_str(), &width, &height, &nrChannels, 0);
-//    if(data){
-//        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
-//        glGenerateMipmap(GL_TEXTURE_2D);
-//    }
-//    else{
-//        std::cout << "Druga tekstura rip" << std::endl;
-//    }
-//
-//    stbi_image_free(data);
 
     pyramidShader.use();
     pyramidShader.setInt("texture1", 0);
@@ -283,28 +245,6 @@ int main() {
     pyramidShader.setInt("textureSpecular", 2);
 
     unsigned int texture3 = loadTexture(FileSystem::getPath("resources/textures/carpet.jpeg").c_str());
-//    unsigned int texture3;
-//
-//    glGenTextures(1, &texture3);
-//    glBindTexture(GL_TEXTURE_2D, texture3);
-//
-//    glTexParameteri(texture3, GL_TEXTURE_WRAP_S, GL_REPEAT);
-//    glTexParameteri(texture3, GL_TEXTURE_WRAP_T, GL_REPEAT);
-//
-//    glTexParameteri(texture3, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-//    glTexParameteri(texture3, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-//
-//    data = stbi_load(FileSystem::getPath("resources/textures/carpet.jpeg").c_str(), &width, &height, &nrChannels, 0);
-//
-//    if(data){
-//        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
-//        glGenerateMipmap(GL_TEXTURE_2D);
-//    }
-//    else{
-//        std::cout << "Treca tekstura rip" << std::endl;
-//    }
-//
-//    stbi_image_free(data);
 
     rectangleShader.use();
     rectangleShader.setInt("texture3", 3);
@@ -356,14 +296,18 @@ int main() {
         pyramidShader.use();
         pyramidShader.setVec3("viewPos", camera.Position);
 
-        pyramidShader.setVec3("light.position", lightPos);
-        pyramidShader.setVec3("light.ambient", glm::vec3(0.2f));
-        pyramidShader.setVec3("light.diffuse", glm::vec3(1.0f));
-        pyramidShader.setVec3("light.specular", glm::vec3(1.0f));
+        pyramidShader.setVec3 ("dirLight.direction", 1.0f, 1.0f, -4.0f);
+        pyramidShader.setVec3("dirLight.ambient", glm::vec3(0.03f));
+        pyramidShader.setVec3("dirLight.diffuse", glm::vec3(0.4f));
+        pyramidShader.setVec3("dirLight.specular", glm::vec3(0.5f));
 
-        pyramidShader.setFloat("light.constant", 1.0f);
-        pyramidShader.setFloat("light.linear", 0.09f);
-        pyramidShader.setFloat("light.quadratic", 0.032f);
+        pyramidShader.setVec3("pointLight.position", lightPos);
+        pyramidShader.setVec3("pointLight.ambient", glm::vec3(0.2f));
+        pyramidShader.setVec3("pointLight.diffuse", glm::vec3(1.0f));
+        pyramidShader.setVec3("pointLight.specular", glm::vec3(1.0f));
+        pyramidShader.setFloat("pointLight.constant", 1.0f);
+        pyramidShader.setFloat("pointLight.linear", 0.09f);
+        pyramidShader.setFloat("pointLight.quadratic", 0.032f);
         pyramidShader.setFloat("material.shininess", 32.0f);
 
         pyramidShader.setMat4("projection", projection);
@@ -396,6 +340,32 @@ int main() {
         rectangleShader.setMat4("model", model);
 
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+
+
+        //macka
+        catShader.use();
+        catShader.setVec3("viewPos", camera.Position);
+        catShader.setVec3 ("dirLight.direction", 1.0f, 1.0f, -4.0f);
+        catShader.setVec3("dirLight.ambient", glm::vec3(0.03f));
+        catShader.setVec3("dirLight.diffuse", glm::vec3(0.4f));
+        catShader.setVec3("dirLight.specular", glm::vec3(0.5f));
+
+        catShader.setVec3("pointLight.position", lightPos);
+        catShader.setVec3("pointLight.ambient", glm::vec3(0.2f));
+        catShader.setVec3("pointLight.diffuse", glm::vec3(1.0f));
+        catShader.setVec3("pointLight.specular", glm::vec3(1.0f));
+        catShader.setFloat("pointLight.constant", 1.0f);
+        catShader.setFloat("pointLight.linear", 0.09f);
+        catShader.setFloat("pointLight.quadratic", 0.032f);
+        catShader.setFloat("material.shininess", 32.0f);
+
+        catShader.setMat4("projection", projection);
+        catShader.setMat4("view", view);
+
+        model = glm::mat4(1.0f);
+        model = glm::translate(model, glm::vec3(-2.0f, 0.0f, -2.0f));
+        catShader.setMat4("model", model);
+        catModel.Draw(catShader);
 
         //svetlo
         lightSourceShader.use();
