@@ -16,61 +16,19 @@
   <component name="ChangeListManager">
     <list default="true" id="8a0e10c7-560f-4560-b14a-abfcbc000ebb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STB_IMAGE.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STB_IMAGE.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STB_IMAGE.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STB_IMAGE.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STB_IMAGE.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STB_IMAGE.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STB_IMAGE.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STB_IMAGE.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STB_IMAGE.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STB_IMAGE.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STB_IMAGE.dir/libs/stb_image.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STB_IMAGE.dir/libs/stb_image.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/project_base.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/project_base.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/project_base.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/project_base.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/project_base.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/project_base.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/project_base.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/project_base.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/project_base.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/project_base.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/project_base.dir/src/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/project_base.dir/src/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/project_base.dir/src/main.cpp.o" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/configuration/root_directory.h" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/configuration/root_directory.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libSTB_IMAGE.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libSTB_IMAGE.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/glad/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/glad/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/glad/CMakeFiles/glad.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/glad/CMakeFiles/glad.dir/C.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/glad/CMakeFiles/glad.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/glad/CMakeFiles/glad.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/glad/CMakeFiles/glad.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/glad/CMakeFiles/glad.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/glad/CMakeFiles/glad.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/glad/CMakeFiles/glad.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/glad/CMakeFiles/glad.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/glad/CMakeFiles/glad.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/glad/CMakeFiles/glad.dir/src/glad.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/glad/CMakeFiles/glad.dir/src/glad.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/glad/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/glad/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/glad/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/glad/cmake_install.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/glad/libglad.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/glad/libglad.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/imgui/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/imgui/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/imgui/CMakeFiles/imgui.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/imgui/CMakeFiles/imgui.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/imgui/CMakeFiles/imgui.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/imgui/CMakeFiles/imgui.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/imgui/CMakeFiles/imgui.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/imgui/CMakeFiles/imgui.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/imgui/CMakeFiles/imgui.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/imgui/CMakeFiles/imgui.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/imgui/CMakeFiles/imgui.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/imgui/CMakeFiles/imgui.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/imgui/CMakeFiles/imgui.dir/src/imgui.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/imgui/CMakeFiles/imgui.dir/src/imgui.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/imgui/CMakeFiles/imgui.dir/src/imgui_demo.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/imgui/CMakeFiles/imgui.dir/src/imgui_demo.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/imgui/CMakeFiles/imgui.dir/src/imgui_draw.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/imgui/CMakeFiles/imgui.dir/src/imgui_draw.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/imgui/CMakeFiles/imgui.dir/src/imgui_impl_glfw.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/imgui/CMakeFiles/imgui.dir/src/imgui_impl_glfw.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/imgui/CMakeFiles/imgui.dir/src/imgui_impl_opengl3.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/imgui/CMakeFiles/imgui.dir/src/imgui_impl_opengl3.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/imgui/CMakeFiles/imgui.dir/src/imgui_tables.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/imgui/CMakeFiles/imgui.dir/src/imgui_tables.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/imgui/CMakeFiles/imgui.dir/src/imgui_widgets.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/imgui/CMakeFiles/imgui.dir/src/imgui_widgets.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/imgui/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/imgui/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/imgui/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/imgui/cmake_install.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/imgui/libimgui.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/imgui/libimgui.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/project_base.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/project_base.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/learnopengl/camera.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/learnopengl/camera.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/rg/mesh.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/rg/mesh.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/rg/model.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/rg/model.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project_base" beforeDir="false" afterPath="$PROJECT_DIR$/project_base" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/shaders/2.model_lighting.fs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/shaders/2.model_lighting.vs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/shaders/pyramid.fs" beforeDir="false" afterPath="$PROJECT_DIR$/resources/shaders/pyramid.fs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/objects/cat/ao.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/objects/cat/diffuse.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/objects/cat/model.dae" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/objects/cat/normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/objects/cat/roughness.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/objects/cat/specular.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/shaders/cat.fs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/shaders/cat.vs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -102,11 +60,6 @@
   </component>
   <component name="RunManager" selected="CMake Application.project_base">
     <configuration name="STB_IMAGE" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="project_base" TARGET_NAME="STB_IMAGE" CONFIG_NAME="Debug">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -159,6 +112,8 @@
       <workItem from="1610567484377" duration="4895000" />
       <workItem from="1610589282507" duration="186000" />
       <workItem from="1610654334804" duration="8199000" />
+      <workItem from="1610737191833" duration="4600000" />
+      <workItem from="1610743183398" duration="109000" />
     </task>
     <servers />
   </component>

@@ -95,9 +95,9 @@ int main() {
     Shader pyramidShader(FileSystem::getPath("resources/shaders/pyramid.vs").c_str(), FileSystem::getPath("resources/shaders/pyramid.fs").c_str());
     Shader rectangleShader(FileSystem::getPath("resources/shaders/rectangle.vs").c_str(), FileSystem::getPath("resources/shaders/rectangle.fs").c_str());
     Shader lightSourceShader(FileSystem::getPath("resources/shaders/light_source.vs").c_str(), FileSystem::getPath("resources/shaders/light_source.fs").c_str());
-    Shader catShader(FileSystem::getPath("resources/shaders/cat.vs").c_str(), FileSystem::getPath("resources/shaders/cat.fs").c_str());
-    Model catModel(FileSystem::getPath("resources/objects/cat/model.dae").c_str());
-    catModel.SetShaderTextureNamePrefix("material.");
+    Shader axeShader(FileSystem::getPath("resources/shaders/axe.vs").c_str(), FileSystem::getPath("resources/shaders/axe.fs").c_str());
+    Model axeModel(FileSystem::getPath("resources/objects/axe/axe.obj").c_str());
+    //axeModel.SetShaderTextureNamePrefix("material.");
 
     float vertices[] = {
             //position          //texture   //normals
@@ -342,30 +342,30 @@ int main() {
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
 
-        //macka
-        catShader.use();
-        catShader.setVec3("viewPos", camera.Position);
-        catShader.setVec3 ("dirLight.direction", 1.0f, 1.0f, -4.0f);
-        catShader.setVec3("dirLight.ambient", glm::vec3(0.03f));
-        catShader.setVec3("dirLight.diffuse", glm::vec3(0.4f));
-        catShader.setVec3("dirLight.specular", glm::vec3(0.5f));
+        //sekira
+        axeShader.use();
+        axeShader.setVec3("viewPos", camera.Position);
+        axeShader.setVec3 ("dirLight.direction", 1.0f, 1.0f, -4.0f);
+        axeShader.setVec3("dirLight.ambient", glm::vec3(0.03f));
+        axeShader.setVec3("dirLight.diffuse", glm::vec3(0.4f));
+        axeShader.setVec3("dirLight.specular", glm::vec3(0.5f));
 
-        catShader.setVec3("pointLight.position", lightPos);
-        catShader.setVec3("pointLight.ambient", glm::vec3(0.2f));
-        catShader.setVec3("pointLight.diffuse", glm::vec3(1.0f));
-        catShader.setVec3("pointLight.specular", glm::vec3(1.0f));
-        catShader.setFloat("pointLight.constant", 1.0f);
-        catShader.setFloat("pointLight.linear", 0.09f);
-        catShader.setFloat("pointLight.quadratic", 0.032f);
-        catShader.setFloat("material.shininess", 32.0f);
+        axeShader.setVec3("pointLight.position", lightPos);
+        axeShader.setVec3("pointLight.ambient", glm::vec3(0.2f));
+        axeShader.setVec3("pointLight.diffuse", glm::vec3(1.0f));
+        axeShader.setVec3("pointLight.specular", glm::vec3(1.0f));
+        axeShader.setFloat("pointLight.constant", 1.0f);
+        axeShader.setFloat("pointLight.linear", 0.09f);
+        axeShader.setFloat("pointLight.quadratic", 0.032f);
+        axeShader.setFloat("material.shininess", 32.0f);
 
-        catShader.setMat4("projection", projection);
-        catShader.setMat4("view", view);
+        axeShader.setMat4("projection", projection);
+        axeShader.setMat4("view", view);
 
         model = glm::mat4(1.0f);
         model = glm::translate(model, glm::vec3(-2.0f, 0.0f, -2.0f));
-        catShader.setMat4("model", model);
-        catModel.Draw(catShader);
+        axeShader.setMat4("model", model);
+        axeModel.Draw(axeShader);
 
         //svetlo
         lightSourceShader.use();
