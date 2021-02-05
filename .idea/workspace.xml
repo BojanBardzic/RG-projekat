@@ -16,19 +16,45 @@
   <component name="ChangeListManager">
     <list default="true" id="8a0e10c7-560f-4560-b14a-abfcbc000ebb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/project_base.dir/src/main.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/10" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/11" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/12" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/13" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/count.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STB_IMAGE.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STB_IMAGE.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/project_base.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/project_base.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/project_base.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/project_base.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/project_base.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/project_base.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/project_base.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/project_base.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/rg/mesh.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/rg/mesh.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/rg/model.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/rg/model.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/glad/CMakeFiles/glad.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/glad/CMakeFiles/glad.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/glad/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/glad/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/imgui/CMakeFiles/imgui.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/imgui/CMakeFiles/imgui.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/imgui/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/imgui/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project_base" beforeDir="false" afterPath="$PROJECT_DIR$/project_base" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/objects/cat/ao.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/objects/cat/diffuse.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/objects/cat/model.dae" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/objects/cat/normal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/objects/cat/roughness.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/objects/cat/specular.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/shaders/cat.fs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/shaders/cat.vs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/objects/axe/axe.mtl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/objects/axe/axe.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/objects/axe/diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/objects/axe/height.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/objects/axe/normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/objects/axe/roughness.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/objects/axe/specular.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/shaders/axe.fs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/shaders/axe.vs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,10 +82,16 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../LearnOpenGL" />
+    <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RunManager" selected="CMake Application.project_base">
     <configuration name="STB_IMAGE" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="project_base" TARGET_NAME="STB_IMAGE" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -77,6 +109,11 @@
     <configuration name="project_base" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="project_base" TARGET_NAME="project_base" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="project_base" RUN_TARGET_NAME="project_base">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <list>
@@ -114,6 +151,10 @@
       <workItem from="1610654334804" duration="8199000" />
       <workItem from="1610737191833" duration="4600000" />
       <workItem from="1610743183398" duration="109000" />
+      <workItem from="1610988845663" duration="1644000" />
+      <workItem from="1612537614331" duration="3717000" />
+      <workItem from="1612541369764" duration="5524000" />
+      <workItem from="1612552284514" duration="7292000" />
     </task>
     <servers />
   </component>
