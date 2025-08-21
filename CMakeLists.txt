@@ -16,7 +16,7 @@ set(CMAKE_CXX_STANDARD 14)
 list(APPEND CMAKE_CXX_FLAGS "-Wall -Wextra -Wno-unused-variable -Wno-unused-parameter -O3")
 
 file(GLOB SOURCES "src/*.cpp" "src/*.c" src/main.cpp)
-file(GLOB HEADERS "include/*.h" "include/*.hpp")
+file(GLOB_RECURSE HEADERS "include/*.h" "include/*.hpp")
 
 find_package(OpenGL REQUIRED)
 find_package(glfw3 REQUIRED)
@@ -42,7 +42,9 @@ include_directories(${CMAKE_BINARY_DIR}/configuration)
 
 include_directories(include/)
 add_executable(${PROJECT_NAME}
-        ${SOURCES})
+        ${SOURCES}
+        ${HEADERS}
+        src/main.cpp)
 
 target_link_libraries(${PROJECT_NAME} ${LIBS})
 
