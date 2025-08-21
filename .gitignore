@@ -1,0 +1,24 @@
+# CLion
+.idea/
+*.iml
+
+# Build folder
+cmake-build-debug/
+!cmake-build-debug/configuration/root_directory.h
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# Compiled objects and executables
+*.o
+*.a
+*.so
+project_base   # your executable
+
+# Backup/temp files
+*~
+*.swp
+*.tmp
