@@ -10,8 +10,17 @@ function(watch)
     )
 endfunction()
 
+# Enable compile_commands.json for clang-tidy
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_POLICY_DEFAULT_CMP0012 NEW)
 set(CMAKE_CXX_STANDARD 14)
+
+# Find clang-tidy
+find_program(CLANG_TIDY_EXE NAMES "clang-tidy")
+if(CLANG_TIDY_EXE)
+    # Tell CMake to run clang-tidy automatically during build
+    set(CMAKE_CXX_CLANG_TIDY "${CLANG_TIDY_EXE}")
+endif()
 
 list(APPEND CMAKE_CXX_FLAGS "-Wall -Wextra -Wno-unused-variable -Wno-unused-parameter -O3")
 
@@ -43,8 +52,7 @@ include_directories(${CMAKE_BINARY_DIR}/configuration)
 include_directories(include/)
 add_executable(${PROJECT_NAME}
         ${SOURCES}
-        ${HEADERS}
-        src/main.cpp)
+        ${HEADERS})
 
 target_link_libraries(${PROJECT_NAME} ${LIBS})
 

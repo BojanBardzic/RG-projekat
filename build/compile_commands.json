@@ -1,0 +1,52 @@
+[
+{
+  "directory": "/home/user/Desktop/piramida_RG/RG-projekat/build",
+  "command": "/usr/bin/c++  -DIMGUI_IMPL_OPENGL_LOADER_GLAD -I/home/user/Desktop/piramida_RG/RG-projekat/build/configuration -I/home/user/Desktop/piramida_RG/RG-projekat/include -I/home/user/Desktop/piramida_RG/RG-projekat/libs/glad/include -I/home/user/Desktop/piramida_RG/RG-projekat/libs/imgui/include  -Wall -Wextra -Wno-unused-variable -Wno-unused-parameter -O3   -std=gnu++14 -o CMakeFiles/project_base.dir/src/main.cpp.o -c /home/user/Desktop/piramida_RG/RG-projekat/src/main.cpp",
+  "file": "/home/user/Desktop/piramida_RG/RG-projekat/src/main.cpp"
+},
+{
+  "directory": "/home/user/Desktop/piramida_RG/RG-projekat/build",
+  "command": "/usr/bin/c++   -I/home/user/Desktop/piramida_RG/RG-projekat/build/configuration -I/home/user/Desktop/piramida_RG/RG-projekat/include  -Wall -Wextra -Wno-unused-variable -Wno-unused-parameter -O3   -std=gnu++14 -Wno-shift-negative-value -Wno-implicit-fallthrough -o CMakeFiles/STB_IMAGE.dir/libs/stb_image.cpp.o -c /home/user/Desktop/piramida_RG/RG-projekat/libs/stb_image.cpp",
+  "file": "/home/user/Desktop/piramida_RG/RG-projekat/libs/stb_image.cpp"
+},
+{
+  "directory": "/home/user/Desktop/piramida_RG/RG-projekat/build/libs/glad",
+  "command": "/usr/bin/cc  -I/home/user/Desktop/piramida_RG/RG-projekat/libs/glad/include    -o CMakeFiles/glad.dir/src/glad.c.o   -c /home/user/Desktop/piramida_RG/RG-projekat/libs/glad/src/glad.c",
+  "file": "/home/user/Desktop/piramida_RG/RG-projekat/libs/glad/src/glad.c"
+},
+{
+  "directory": "/home/user/Desktop/piramida_RG/RG-projekat/build/libs/imgui",
+  "command": "/usr/bin/c++  -DIMGUI_IMPL_OPENGL_LOADER_GLAD -I/home/user/Desktop/piramida_RG/RG-projekat/libs/imgui/include -I/home/user/Desktop/piramida_RG/RG-projekat/libs/glad/include  -Wall -Wextra -Wno-unused-variable -Wno-unused-parameter -O3   -std=gnu++14 -o CMakeFiles/imgui.dir/src/imgui.cpp.o -c /home/user/Desktop/piramida_RG/RG-projekat/libs/imgui/src/imgui.cpp",
+  "file": "/home/user/Desktop/piramida_RG/RG-projekat/libs/imgui/src/imgui.cpp"
+},
+{
+  "directory": "/home/user/Desktop/piramida_RG/RG-projekat/build/libs/imgui",
+  "command": "/usr/bin/c++  -DIMGUI_IMPL_OPENGL_LOADER_GLAD -I/home/user/Desktop/piramida_RG/RG-projekat/libs/imgui/include -I/home/user/Desktop/piramida_RG/RG-projekat/libs/glad/include  -Wall -Wextra -Wno-unused-variable -Wno-unused-parameter -O3   -std=gnu++14 -o CMakeFiles/imgui.dir/src/imgui_demo.cpp.o -c /home/user/Desktop/piramida_RG/RG-projekat/libs/imgui/src/imgui_demo.cpp",
+  "file": "/home/user/Desktop/piramida_RG/RG-projekat/libs/imgui/src/imgui_demo.cpp"
+},
+{
+  "directory": "/home/user/Desktop/piramida_RG/RG-projekat/build/libs/imgui",
+  "command": "/usr/bin/c++  -DIMGUI_IMPL_OPENGL_LOADER_GLAD -I/home/user/Desktop/piramida_RG/RG-projekat/libs/imgui/include -I/home/user/Desktop/piramida_RG/RG-projekat/libs/glad/include  -Wall -Wextra -Wno-unused-variable -Wno-unused-parameter -O3   -std=gnu++14 -o CMakeFiles/imgui.dir/src/imgui_draw.cpp.o -c /home/user/Desktop/piramida_RG/RG-projekat/libs/imgui/src/imgui_draw.cpp",
+  "file": "/home/user/Desktop/piramida_RG/RG-projekat/libs/imgui/src/imgui_draw.cpp"
+},
+{
+  "directory": "/home/user/Desktop/piramida_RG/RG-projekat/build/libs/imgui",
+  "command": "/usr/bin/c++  -DIMGUI_IMPL_OPENGL_LOADER_GLAD -I/home/user/Desktop/piramida_RG/RG-projekat/libs/imgui/include -I/home/user/Desktop/piramida_RG/RG-projekat/libs/glad/include  -Wall -Wextra -Wno-unused-variable -Wno-unused-parameter -O3   -std=gnu++14 -o CMakeFiles/imgui.dir/src/imgui_impl_glfw.cpp.o -c /home/user/Desktop/piramida_RG/RG-projekat/libs/imgui/src/imgui_impl_glfw.cpp",
+  "file": "/home/user/Desktop/piramida_RG/RG-projekat/libs/imgui/src/imgui_impl_glfw.cpp"
+},
+{
+  "directory": "/home/user/Desktop/piramida_RG/RG-projekat/build/libs/imgui",
+  "command": "/usr/bin/c++  -DIMGUI_IMPL_OPENGL_LOADER_GLAD -I/home/user/Desktop/piramida_RG/RG-projekat/libs/imgui/include -I/home/user/Desktop/piramida_RG/RG-projekat/libs/glad/include  -Wall -Wextra -Wno-unused-variable -Wno-unused-parameter -O3   -std=gnu++14 -o CMakeFiles/imgui.dir/src/imgui_impl_opengl3.cpp.o -c /home/user/Desktop/piramida_RG/RG-projekat/libs/imgui/src/imgui_impl_opengl3.cpp",
+  "file": "/home/user/Desktop/piramida_RG/RG-projekat/libs/imgui/src/imgui_impl_opengl3.cpp"
+},
+{
+  "directory": "/home/user/Desktop/piramida_RG/RG-projekat/build/libs/imgui",
+  "command": "/usr/bin/c++  -DIMGUI_IMPL_OPENGL_LOADER_GLAD -I/home/user/Desktop/piramida_RG/RG-projekat/libs/imgui/include -I/home/user/Desktop/piramida_RG/RG-projekat/libs/glad/include  -Wall -Wextra -Wno-unused-variable -Wno-unused-parameter -O3   -std=gnu++14 -o CMakeFiles/imgui.dir/src/imgui_tables.cpp.o -c /home/user/Desktop/piramida_RG/RG-projekat/libs/imgui/src/imgui_tables.cpp",
+  "file": "/home/user/Desktop/piramida_RG/RG-projekat/libs/imgui/src/imgui_tables.cpp"
+},
+{
+  "directory": "/home/user/Desktop/piramida_RG/RG-projekat/build/libs/imgui",
+  "command": "/usr/bin/c++  -DIMGUI_IMPL_OPENGL_LOADER_GLAD -I/home/user/Desktop/piramida_RG/RG-projekat/libs/imgui/include -I/home/user/Desktop/piramida_RG/RG-projekat/libs/glad/include  -Wall -Wextra -Wno-unused-variable -Wno-unused-parameter -O3   -std=gnu++14 -o CMakeFiles/imgui.dir/src/imgui_widgets.cpp.o -c /home/user/Desktop/piramida_RG/RG-projekat/libs/imgui/src/imgui_widgets.cpp",
+  "file": "/home/user/Desktop/piramida_RG/RG-projekat/libs/imgui/src/imgui_widgets.cpp"
+}
+]

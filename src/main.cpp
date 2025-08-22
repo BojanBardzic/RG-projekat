@@ -57,8 +57,8 @@ int main()
 
   // glfw window creation
   // --------------------
-  GLFWwindow *window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "Projekat", NULL, NULL);
-  if (window == NULL)
+  GLFWwindow *window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "Projekat", nullptr, nullptr);
+  if (window == nullptr)
   {
     std::cout << "Failed to create GLFW window" << std::endl;
     glfwTerminate();
@@ -185,7 +185,7 @@ int main()
   glBindBuffer(GL_ARRAY_BUFFER, pVBO);
   glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
-  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void *)0);
+  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void *)nullptr);
   glEnableVertexAttribArray(0);
   glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void *)(3 * sizeof(float)));
   glEnableVertexAttribArray(1);
@@ -205,7 +205,7 @@ int main()
   glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, rEBO);
   glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
-  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void *)0);
+  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void *)nullptr);
   glEnableVertexAttribArray(0);
   glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void *)(3 * sizeof(float)));
   glEnableVertexAttribArray(1);
@@ -219,7 +219,7 @@ int main()
   glBindBuffer(GL_ARRAY_BUFFER, skyboxVBO);
   glBufferData(GL_ARRAY_BUFFER, sizeof(skyboxVertices), &skyboxVertices, GL_STATIC_DRAW);
 
-  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void *)0);
+  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void *)nullptr);
   glEnableVertexAttribArray(0);
 
   // svetlo
@@ -231,7 +231,7 @@ int main()
   glBindBuffer(GL_ARRAY_BUFFER, lightVBO);
   glBufferData(GL_ARRAY_BUFFER, sizeof(verticesLight), verticesLight, GL_STATIC_DRAW);
 
-  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void *)0);
+  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void *)nullptr);
   glEnableVertexAttribArray(0);
 
   glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -359,7 +359,7 @@ int main()
 
     rectangleShader.setMat4("model", model);
 
-    glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+    glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
 
     // ranac
     backpackShader.use();
@@ -494,7 +494,7 @@ unsigned int loadTexture(char const *path)
   unsigned char *data = stbi_load(path, &width, &height, &nrComponents, 0);
   if (data)
   {
-    GLenum format;
+    GLenum format = GL_RGB;
     if (nrComponents == 1)
       format = GL_RED;
     else if (nrComponents == 3)
