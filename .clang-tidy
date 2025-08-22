@@ -1,0 +1,11 @@
+Checks: >
+    clang-analyzer-core.uninitialized.*,
+    clang-analyzer-deadcode.DeadStores,
+    clang-analyzer-core.DivideZero,
+    clang-analyzer-core.NullDereference,
+    bugprone-integer-division,
+
+WarningsAsErrors: ''
+HeaderFilterRegex: '.*'
+AnalyzeTemporaryDtors: false
+FormatStyle: none
